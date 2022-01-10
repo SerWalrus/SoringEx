@@ -1,5 +1,26 @@
 package fr.solutec.entities;
 
-public class Memo {
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class Memo {
+	@Id
+	@GeneratedValue
+	private Long id;
+	private Date date_creation;
+	private String contenu;
+	@ManyToOne
+	private User user;
 }
