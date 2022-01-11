@@ -1,6 +1,6 @@
 package fr.solutec.entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,12 +16,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Events {
+
 	@Id
 	@GeneratedValue
 	private Long Id;
+
 	private String titre;
 	private String description;
 	private Date dateEvent;
 	@ManyToOne
-	private User users;
+	private User desinataire;
+	@ManyToOne
+	private User user;
 }
