@@ -38,7 +38,7 @@ public class SpringExApplication implements CommandLineRunner {
 		Memo m2 = new Memo(null, null, "Ceci est le contenu du deuxième mémo", null, u1);
 		Memo m3 = new Memo(null, null, "Ceci est le contenu du troisième mémo", null, u2);
 		Memo m4 = new Memo(null, null, "Ceci est le contenu du quatrième mémo", null, u1);
-		Memo m5 = new Memo(null, null, "Gaël est un loser", null, u3);
+		Memo m5 = new Memo(null, null, "Gaël est un loser", u1, u3);
 
 		memoRepos.save(m1);
 		memoRepos.save(m2);
