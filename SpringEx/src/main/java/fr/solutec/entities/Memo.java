@@ -24,6 +24,7 @@ public class Memo {
 	@CreationTimestamp
 	private Date date_creation;
 	private String contenu;
+	private User desinataire;
 	@ManyToOne
 	private User user;
 }
