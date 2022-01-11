@@ -20,7 +20,6 @@ public class SpringExApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("lancement des instructions perso");
 
 		User u1 = new User(null, "login", "mdp");
