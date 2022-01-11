@@ -36,6 +36,11 @@ public class MemoRest {
 		return memoRepos.save(m);
 	}
 
+	@GetMapping("memo/{id}")
+	public Optional<Memo> getDate(@PathVariable Long id) {
+		return memoRepos.findById(id);
+	}
+
 	@PostMapping("sendPublicMemo")
 	public Memo sendPublicMemo(@RequestBody Memo m) {
 		return memoRepos.save(m);
@@ -50,6 +55,7 @@ public class MemoRest {
 		} else {
 			return false;
 		}
+
 	}
 
 }
