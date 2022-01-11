@@ -16,7 +16,8 @@ public class EventRest {
 	@Autowired
 	private EventRepository eventRepo;
 	
-	@PostMapping("sendMemo")
+	
+	@PostMapping("createEvent")
 	public Events createEvent(@RequestBody Events e) {
 		return eventRepo.save(e);
 	}
