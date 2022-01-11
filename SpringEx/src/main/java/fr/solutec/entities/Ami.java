@@ -1,7 +1,5 @@
 package fr.solutec.entities;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,13 +13,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Events {
+public class Ami {
 	@Id
 	@GeneratedValue
-	private Long Id;
-	private String titre;
-	private String description;
-	private Date dateEvent;
+	private Long id;
 	@ManyToOne
-	private User users;
+	private User demandeur;
+	@ManyToOne
+	private User receveur;
+
+	private boolean accepte;
+
 }
