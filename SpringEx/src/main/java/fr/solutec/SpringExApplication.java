@@ -1,12 +1,17 @@
 package fr.solutec;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.solutec.entities.Events;
 import fr.solutec.entities.Memo;
 import fr.solutec.entities.User;
+import fr.solutec.repository.EventRepository;
 import fr.solutec.repository.MemoRepository;
 import fr.solutec.repository.UserRepository;
 
@@ -16,6 +21,8 @@ public class SpringExApplication implements CommandLineRunner {
 	private UserRepository userRepos;
 	@Autowired
 	private MemoRepository memoRepos;
+	@Autowired
+	private EventRepository eventRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringExApplication.class, args);
@@ -45,6 +52,12 @@ public class SpringExApplication implements CommandLineRunner {
 		memoRepos.save(m3);
 		memoRepos.save(m4);
 		memoRepos.save(m5);
+		DateFormat d = new SimpleDateFormat("dd/MM/yyyy"); 
+		Events e1 = new Events(null,"aazga","zeg",d.parse("08/01/2020"),null,null);
+		Events e2 = new Events(null,"aazga","zeg",d.parse("08/01/2023"),null,null);
+		
+		eventRepo.save(e1);
+		eventRepo.save(e2);
 
 	}
 

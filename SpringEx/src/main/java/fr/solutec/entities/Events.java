@@ -1,6 +1,6 @@
 package fr.solutec.entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Events {
 	private Long id;
 	private String titre;
 	private String description;
-	private Date date_event;
+	private Date dateEvent;
 	@ManyToOne
 	private User desinataire;
 	@ManyToOne
