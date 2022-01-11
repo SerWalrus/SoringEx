@@ -32,7 +32,7 @@ public class EventRest {
 	@GetMapping("event_passe")
 	public  List<Events> getpEventsByDate(){
 		Date d = new Date();
-		return eventRepo.findByDateEventBefore(d);
+		return eventRepo.trouverEventsPasse(d);
 	}
 	
 	@GetMapping("event_futur")
