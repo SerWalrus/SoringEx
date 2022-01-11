@@ -15,10 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor @AllArgsConstructor @Data
 public class Events {
 	@Id @GeneratedValue
-	private Long ID;
+	private Long id;
 	private String titre;
 	private String description;
 	private Date date_event;
 	@ManyToOne
-	private User users;
+	private User desinataire;
+	@ManyToOne
+	private User user;
 }
