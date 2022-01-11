@@ -22,7 +22,7 @@ public class Memo {
 	@GeneratedValue
 	private Long id;
 	@CreationTimestamp
-	private Date date_creation;
+	private Date dateCreation;
 	private String contenu;
 	@ManyToOne
 	private User user;
