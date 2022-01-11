@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,7 @@ public class Memo {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@CreationTimestamp
 	private Date date_creation;
 	private String contenu;
 	@ManyToOne

@@ -5,13 +5,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.solutec.entities.Memo;
 import fr.solutec.entities.User;
+import fr.solutec.repository.MemoRepository;
 import fr.solutec.repository.UserRepository;
 
 @SpringBootApplication
 public class SpringExApplication implements CommandLineRunner {
 	@Autowired
 	private UserRepository userRepos;
+	@Autowired
+	private MemoRepository memoRepos;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringExApplication.class, args);
@@ -29,6 +33,19 @@ public class SpringExApplication implements CommandLineRunner {
 		userRepos.save(u1);
 		userRepos.save(u2);
 		userRepos.save(u3);
+
+		Memo m1 = new Memo(null, null, "Ceci est le contenu du premier mémo", u1);
+		Memo m2 = new Memo(null, null, "Ceci est le contenu du deuxième mémo", u1);
+		Memo m3 = new Memo(null, null, "Ceci est le contenu du troisième mémo", u2);
+		Memo m4 = new Memo(null, null, "Ceci est le contenu du quatrième mémo", u1);
+		Memo m5 = new Memo(null, null, "Gaël est un loser", u3);
+
+		memoRepos.save(m1);
+		memoRepos.save(m2);
+		memoRepos.save(m3);
+		memoRepos.save(m4);
+		memoRepos.save(m5);
+
 	}
 
 }
